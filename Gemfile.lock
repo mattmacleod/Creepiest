@@ -95,6 +95,10 @@ GEM
       arrayfields (>= 4.7.4)
       fattr (>= 2.1.0)
     memory_test_fix (0.2.0)
+    meta_where (1.0.4)
+      activerecord (~> 3.0.0)
+      activesupport (~> 3.0.0)
+      arel (~> 2.0.7)
     metric_fu (2.1.1)
       Saikuro (>= 1.1.0)
       activesupport (>= 2.0.0)
@@ -189,6 +193,7 @@ DEPENDENCIES
   jammit
   jquery-rails
   memory_test_fix
+  meta_where
   metric_fu
   mongrel (= 1.2.0.pre2)
   rails (= 3.0.6)

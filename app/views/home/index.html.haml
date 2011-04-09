@@ -1,0 +1,7 @@
+#centered
+	= form_tag search_path do
+		%fieldset
+			= label_tag "Search"
+			= text_field_tag :account_name
+			= select_tag :account_type, options_for_select( ["twitter"] )
+			= submit_tag "Search", :name => nil, :class => :submit

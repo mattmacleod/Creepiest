@@ -3,8 +3,8 @@ package_path: packages
 javascripts:
   default:
     - public/javascripts/application.js
-    - public/javascripts/admin/jquery-1.5.js  
-    - public/javascripts/admin/jquery-rails.js
+    - public/javascripts/jquery.js  
+    - public/javascripts/jquery-rails.js
 stylesheets:
   default:
     - public/stylesheets/styles.css

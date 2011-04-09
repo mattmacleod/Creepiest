@@ -5,5 +5,6 @@ class Account < ActiveRecord::Base
   
   # Validations
   validates_uniqueness_of :name, :scope => :account_type
+  validates :account_type, :inclusion => ["twitter"]
   
 end

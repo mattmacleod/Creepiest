@@ -7,8 +7,12 @@ class AccountTest < ActiveSupport::TestCase
   should have_db_column(:name).of_type(:string).with_options(:null => false)
   should have_db_column(:synced_at).of_type(:datetime)
   
-  # Other model tests
+  # Relationships
   should have_many :locations
+  
+  # Validations
+  should allow_value("twitter").for(:account_type)
+  should_not allow_value("anythingelse").for(:account_type)
   
   context "an account" do
     setup{ @account = Factory(:account) }

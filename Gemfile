@@ -5,6 +5,7 @@ gem 'rails', '3.0.6'
 # Essentials
 gem "haml"
 gem "jammit"
+gem "meta_where"
 
 group :development do
   gem "fastthread"
