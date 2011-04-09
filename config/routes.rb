@@ -1,3 +1,3 @@
-Railsapp::Application.routes.draw do
+Creepiest::Application.routes.draw do
   # root :to => "welcome#index"
 end

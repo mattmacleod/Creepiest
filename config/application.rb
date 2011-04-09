@@ -4,7 +4,7 @@ require 'rails/all'
 
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
-module Railsapp
+module Creepiest
   class Application < Rails::Application
     
     config.generators do |g|
