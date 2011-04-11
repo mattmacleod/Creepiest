@@ -1,0 +1,9 @@
+#left_panel
+
+#right_panel
+	- if @account.locations.count > 0
+		#main_map{ "data-json-url" => url_for( locations_path( :id => @account.id ) ) }
+			.loading Loading map...
+	- else
+		#empty_notification
+			This user has no geotagged posts

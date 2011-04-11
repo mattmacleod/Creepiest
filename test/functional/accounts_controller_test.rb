@@ -5,6 +5,7 @@ class AccountsControllerTest < ActionController::TestCase
   # Routing
   should "have correct routing" do
     assert_routing "/show/1", { :controller=>"accounts", :action=>"show", :id => "1" }
+    assert_routing "/show/1/locations.json", { :controller=>"accounts", :action=>"locations", :id => "1" }
   end
   
   context "with no existing accounts" do
@@ -59,6 +60,24 @@ class AccountsControllerTest < ActionController::TestCase
       setup { get :show, :id => 99898999 }
       should respond_with :redirect
       should redirect_to("404 page"){ "/404.html" }
+    end
+    
+    context "with locations" do
+      setup do
+        @locations = [
+          @location1 = Factory(:location, :account => @account, :location_time => 2.years.ago, :lat => 2.0),
+          @location2 = Factory(:location, :account => @account, :location_time => 1.year.ago, :lat => 1.0)
+        ]
+      end
+      context "a get to :locations for that account" do
+        setup { get :locations, :id => @account.id, :format => :json }
+        should respond_with :success
+        should "return locations as JSON in correct date order" do
+          locations = JSON.parse(@response.body)
+          assert_equal 2.0, locations[0]["location"]["lat"]
+          assert_equal 1.0, locations[1]["location"]["lat"]
+        end
+      end
     end
     
   end

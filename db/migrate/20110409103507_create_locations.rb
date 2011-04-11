@@ -5,6 +5,7 @@ class CreateLocations < ActiveRecord::Migration
       t.float :lat, :null => false
       t.float :lng, :null => false
       t.datetime :location_time, :null => false
+      t.string :remote_id, :null => false
       t.timestamps
     end
   end

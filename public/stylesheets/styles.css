@@ -82,3 +82,7 @@ th {
 }
 
 @import url(text.css);
+#main_map {
+  width: 900px;
+  height: 500px;
+}

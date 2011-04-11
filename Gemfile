@@ -6,6 +6,7 @@ gem 'rails', '3.0.6'
 gem "haml"
 gem "jammit"
 gem "meta_where"
+gem "twitter"
 
 group :development do
   gem "fastthread"

@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20110409103507) do
     t.float    "lat",           :null => false
     t.float    "lng",           :null => false
     t.datetime "location_time", :null => false
+    t.string   "remote_id",     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

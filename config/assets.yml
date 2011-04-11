@@ -2,9 +2,11 @@ embed_assets: on
 package_path: packages
 javascripts:
   default:
-    - public/javascripts/application.js
     - public/javascripts/jquery.js  
     - public/javascripts/jquery-rails.js
+    - public/javascripts/jquery-googlemaps.js
+    - public/javascripts/application.js
+    - public/javascripts/map.js
 stylesheets:
   default:
     - public/stylesheets/styles.css

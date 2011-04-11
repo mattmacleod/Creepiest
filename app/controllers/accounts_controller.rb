@@ -15,6 +15,7 @@ class AccountsController < ApplicationController
         :account_type => params[:account_type]
       )
       if @account.save
+        @account.sync unless Rails.env=="test"
         redirect_to show_path( :id => @account.id )
       else
         flash[:warning] = "Enter valid details"
@@ -26,6 +27,11 @@ class AccountsController < ApplicationController
   
   def show
     @account = Account.find( params[:id] )
+  end
+  
+  def locations
+    @account = Account.find( params[:id] )
+    render :json => @account.locations.order(:location_time).to_json
   end
   
 end
